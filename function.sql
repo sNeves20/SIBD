@@ -7,8 +7,7 @@ BEGIN
   DECLARE c_count integer;
   SELECT COUNT(distinct consult.date_timestamp) INTO c_count
   FROM consult NATURAL JOIN animal
-  WHERE animal.name = "Soja" AND animal.VAT =  184530918 AND YEAR(consult.date_timestamp) = 2018
-  GROUP BY YEAR(consult.date_timestamp);
+  WHERE animal.name = animal_name AND animal.VAT =  owner_VAT AND YEAR(consult.date_timestamp) = year;
 RETURN c_count;
 END$$
 
