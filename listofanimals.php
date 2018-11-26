@@ -47,19 +47,18 @@
 		              $owner = $row['owner'];
 		              $animal = $row['name'];
                   echo "<tr>";
-                  echo ("<td>" . '<a href="http://web.tecnico.ulisboa.pt/ist178111/listofconsults.php">'. $VAT .'</a>' .  "</td>");
+                  echo "<td>" . $VAT . "</td>";
                   echo "<td>" . $owner . "</td>";
-                  echo "<td>" . $animal . "</td>";
+                  echo "<td>" . '<a href="listofconsults.php?animal_name='. $animal .'">' . $animal .'</a>' .  "</td>";
 
-                  echo("<td><a href=\"newbalance.php?account_number=");
-                  echo($row['account_number']);
-                  echo("\">Change balance</a></td>\n");
-                  echo "</tr>";
                 }
               echo ("</table>");
               $connection = null;
+              echo("<form action='register_new_animal.php' method='post'>
+                <p> <input type='hidden' name='VAT' value=$client_VAT> </p>
+                <p> <input type='submit' name='Register' value='Register New Animal'> </p>
+              </form>");
           ?>
-
         </form>
     </body>
 </html>
