@@ -54,9 +54,9 @@
               echo ("</table>");
               $connection = null;
               echo("<form action='register_new_animal.php' method='post'>
-                <p> <input type='hidden' name='VAT' value= " . $client_VAT . "> </p>
-                <p> <input type='hidden' name='VAT' value=" . $animal_name . "> </p>
-                <p> <input type='submit' name='Register' value='Register New Animal'> </p>
+                <p> <input type='hidden' name='client_VAT' value= " . $client_VAT . "> </p>
+                <p> <input type='hidden' name='animal_name' value=" . $animal_name . "> </p>
+                <p> <input type='submit' value='Register New Animal'> </p>
               </form>");
           ?>
     </body>
