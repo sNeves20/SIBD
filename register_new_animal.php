@@ -5,8 +5,8 @@
       <?php
 
           $host = "db.ist.utl.pt";
-          $user = "ist178111";
-          $pass = "fryk4600";
+          $user = "ist190841";
+          $pass = "zzpq7270";
           $dsn = "mysql:host=$host;dbname=$user";
           try
           {
@@ -20,7 +20,7 @@
             exit();
           }
 
-          $owner_VAT = intval($_REQUEST['client_VAT']);
+          $owner_VAT = $_REQUEST['client_VAT'];
           $animal_name = $_REQUEST['animal_name'];
 
           echo("<form action = 'insert_animal.php' method = 'post'>
