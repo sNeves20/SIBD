@@ -4,8 +4,8 @@
         <?php
 
             $host = "db.ist.utl.pt";
-            $user = "ist178111";
-            $pass = "fryk4600";
+            $user = "ist190841";
+            $pass = "zzpq7270";
             $dsn = "mysql:host=$host;dbname=$user";
             try
             {
@@ -20,18 +20,16 @@
             }
 
             //Requesting access to variables obtained in the form
-            $owner_VAT = integer($_REQUEST['client_VAT']);
+
+            $owner_VAT = $_REQUEST['client_VAT'];
             $animal_name = $_REQUEST['animal_name'];
             $species_name = $_REQUEST['species_name'];
             $colour = $_REQUEST['colour'];
             $gender = $_REQUEST['gender'];
-            $birth_year = intval($_REQUEST['birth_year']);
+            $birth_year = $_REQUEST['birth_year'];
 
             //Issuing MySQL command
-            $sql = "INSERT INTO animal(name, VAT, species_name, colour, gender, birth_year) VALUES('$animal_name', $owner_VAT, '$species_name', '$colour', '$gender', $birth_year)";
-
-            //$sql = "INSERT INTO animal(name, VAT, species_name, colour, gender, birth_year) VALUES($animal_name, $owner_VAT, $species_name, $colour, $gender, $birth_year)";
-            //$sql = "INSERT INTO animal(name, VAT, species_name, colour, gender, birth_year) VALUES('Newt', 184530918, 'Pug', 'Black' , 'F', 2010)";
+            $sql = "INSERT INTO animal(name, VAT, species_name, colour, gender, birth_year) VALUES('$animal_name', '184530918', '$species_name', '$colour' , '$gender', '$birth_year')";
 
             $result = $connection->query($sql);
             if ($result == FALSE)
@@ -41,8 +39,11 @@
                 exit();
             }
 
-            echo("<form action = 'create_new_consult.php' method = 'post'>
-                <p> <input type='submit' value='New Consult'/></p>
+            echo("<form action='create_new_consult.php' method='post'>
+              <p> <input type='hidden' name='owner_VAT' value= " . $owner_VAT . "> </p>
+              <p> <input type='hidden' name='client_VAT' value= " . $owner_VAT . "> </p>
+              <p> <input type='hidden' name='animal_name' value=" . $animal_name . "> </p>
+              <p> <input type='submit' value='New Consult'> </p>
             </form>");
 
             $connection = null;
