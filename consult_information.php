@@ -26,7 +26,7 @@
 
 
             //Issuing MySQL command
-            $sql = "SELECT * FROM consult WHERE name = '$animal_name' AND date_timestamp = '$consult_date' AND VAT_owner =". intval($owner_VAT).";";
+            $sql = " SELECT * FROM animal INNER JOIN consult NATURAL JOIN consult_diagnosis NATURAL JOIN procedure_ WHERE animal.name = '$animal_name' AND animal.VAT =".intval($owner_VAT)."AND consult.date_timestamp = '$consult_date';";
             $result = $connection->query($sql);
 
             if ($result == FALSE)
