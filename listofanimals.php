@@ -4,8 +4,8 @@
       <body>
           <?php
               $host = "db.ist.utl.pt";
-              $user = "ist178111";
-              $pass = "fryk4600";
+              $user = "ist190841";
+              $pass = "zzpq7270";
               $dsn = "mysql:host=$host;dbname=$user";
               try
               {
@@ -48,7 +48,7 @@
                     echo "<tr>";
                     echo "<td>" . $owner_VAT . "</td>";
                     echo "<td>" . $owner . "</td>";
-                    echo "<td>" . '<a href="list_of_consults.php?owner_VAT='. $owner_VAT .'&animal_name='.$animal_name. '">'. $animal .'</a>'."</td>";
+                    echo "<td>" . '<a href="list_of_consults.php?owner_VAT='. $owner_VAT .'&animal_name='.$animal_name. '&client_VAT='.$client_VAT. '">'. $animal .'</a>'."</td>";
                     echo "</tr>";
                 }
               echo ("</table>");

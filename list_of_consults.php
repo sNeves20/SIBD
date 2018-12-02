@@ -5,8 +5,8 @@
         <?php
         //Connecting to server
         $host = "db.ist.utl.pt";
-        $user = "ist178111";
-        $pass = "fryk4600";
+        $user = "ist190841";
+        $pass = "zzpq7270";
         $dsn = "mysql:host=$host;dbname=$user";
         try
         {
@@ -23,6 +23,7 @@
         //Getting values passed from href
             $animal_name = $_GET['animal_name'];
             $owner_VAT = intval($_GET['owner_VAT']);
+            $client_VAT = intval($_GET['client_VAT']);
 
             $sql = "SELECT date_timestamp FROM consult WHERE name = '$animal_name' AND VAT_owner=".intval($owner_VAT).";";
             $result = $connection->query($sql);
@@ -46,6 +47,13 @@
             echo ("</table>");
 
             $connection = null;
+
+            echo("<form action='create_new_consult.php' method='post'>
+              <p> <input type='hidden' name='owner_VAT' value= " . $owner_VAT . "> </p>
+              <p> <input type='hidden' name='client_VAT' value= " . $client_VAT . "> </p>
+              <p> <input type='hidden' name='animal_name' value=" . $animal_name . "> </p>
+              <p> <input type='submit' value='New Consult'> </p>
+            </form>");
 
          ?>
 
