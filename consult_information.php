@@ -49,6 +49,14 @@
                 <td>Clients' VAT</td>
                 <td>Veteranaries' VAT</td>
                 <td>Weight</td>
+
+                <td>Species Name</td>
+                <td>Colour</td>
+                <td>Gender</td>
+                <td>Birth Year</td>
+                <td>Code</td>
+                <td>Num</td>
+                <td>Description</td>
               </tr>");
 
 
@@ -61,6 +69,13 @@
                   $vet_VAT= $row['VAT_vet'];
                   $weight = $row['weight'];
 
+                  $species = $row['species_name'];
+                  $colour = $row['colour'];
+                  $birth_year = $row['birth_year'];
+                  $code = $row['code'];
+                  $num = $row['num'];
+                  $desc = $row['description'];
+
                   echo "<tr>";
                   echo "<td>" . $animal_name . "</td>";
                   echo "<td>" . $consult_date . "</td>";
@@ -72,6 +87,13 @@
                   echo "<td>" . $cli_VAT . "</td>";
                   echo "<td>" . $vet_VAT . "</td>";
                   echo "<td>" . $weight . "</td>";
+
+                  echo "<td>" . $species . "</td>";
+                  echo "<td>" . $colour . "</td>";
+                  echo "<td>" . $birth_year . "</td>";
+                  echo "<td>" . $code . "</td>";
+                  echo "<td>" . $num . "</td>";
+                  echo "<td>" . $desc . "</td>";
                   echo "</tr>";
             }
 
