@@ -5,8 +5,8 @@
         <?php
             //Connecting to server
             $host = "db.ist.utl.pt";
-            $user = "ist178111";
-            $pass = "fryk4600";
+            $user = "ist190841";
+            $pass = "zzpq7270";
             $dsn = "mysql:host=$host;dbname=$user";
             try
             {
@@ -47,7 +47,7 @@
                 <td>A</td>
                 <td>P</td>
                 <td>Clients' VAT</td>
-                <td>Veteranaries' VAT</td>
+                <td>Veterinaries' VAT</td>
                 <td>Weight</td>
               </tr>");
 
@@ -79,6 +79,9 @@
 
             $connection = null;
             echo("<form action='blood_test_results.php' method='post'>
+              <p> <input type='hidden' name='owner_VAT' value= " . $owner_VAT . "> </p>
+              <p> <input type='hidden' name='animal_name' value=" . $animal_name . "> </p>
+              <p> <input type='hidden' name='consult_date' value=" . $consult_date . "> </p>
               <p> <input type='submit' value='Insert Boold Test Results'> </p>
             </form>");
 
