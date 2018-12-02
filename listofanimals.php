@@ -42,14 +42,14 @@
                 foreach($result as $row)
                 {
 
-                  $VAT = $row['VAT'];
-		              $owner = $row['owner'];
-		              $animal = $row['name'];
-                  echo "<tr>";
-                  echo "<td>" . $VAT . "</td>";
-                  echo "<td>" . $owner . "</td>";
-                  echo "<td>" . '<a href="listofconsults.php?animal_name='. $animal .'">' . $animal .'</a>' .  "</td>";
-
+                    $owner_VAT = $row['VAT'];
+    		        $owner = $row['owner'];
+    		        $animal = $row['name'];
+                    echo "<tr>";
+                    echo "<td>" . $owner_VAT . "</td>";
+                    echo "<td>" . $owner . "</td>";
+                    echo "<td>" . '<a href="list_of_consults.php?owner_VAT='. $owner_VAT .'&animal_name='.$animal_name. '">'. $animal .'</a>'."</td>";
+                    echo "</tr>";
                 }
               echo ("</table>");
               $connection = null;
