@@ -26,7 +26,7 @@
 
 
             //Issuing MySQL command
-            $sql = " SELECT * FROM animal INNER JOIN consult NATURAL JOIN consult_diagnosis NATURAL JOIN procedure_ WHERE animal.name = '$animal_name' AND animal.VAT =".intval($owner_VAT)." AND consult.date_timestamp = CAST('$consult_date' as datetime)";
+            $sql = " SELECT * FROM animal INNER JOIN consult NATURAL JOIN consult_diagnosis NATURAL JOIN procedure_ WHERE animal.name = '$animal_name' AND animal.VAT =".intval($owner_VAT)." AND consult.date_timestamp = CAST('$consult_date' AS datetime)";
             $result = $connection->query($sql);
 
             if ($result == FALSE)
@@ -104,11 +104,12 @@
             $connection = null;
 
             echo("<form action='blood_test_results.php' method='post'>
-              <input type='hidden' name='animal_name' value=$animal_name>
-              <input type='hidden' name='owner_VAT' value=$owner_VAT>
-              <input type='hidden' name='date_time' value=$consult_date>
-              <input type='hidden' name='procedure_num' value=$num>
-              <p> <input type='submit' value='Insert Boold Test Results'> </p>
+
+            <p> <input type='hidden' name='owner_VAT' value= " . $owner_VAT . "> </p>
+            <p> <input type='hidden' name='animal_name' value=" . $animal_name . "> </p>
+            <p> <input type='hidden' name='consult_date' value=" . $consult_date . "> </p>
+            <p> <input type='submit' value='Insert Boold Test Results'> </p>
+
             </form>");
 
          ?>
