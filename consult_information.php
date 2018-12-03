@@ -102,11 +102,12 @@
             echo ("</table>");
 
             $connection = null;
+
             echo("<form action='blood_test_results.php' method='post'>
-              <input type="hidden" name="animal_name" value=$animal_name>
-              <input type="hidden" name="owner_VAT" value=$owner_VAT>
-              <input type="hidden" name="date_time" value=$consult_date>
-              <input type="hidden" name="procedure_num" value=$num>
+              <input type='hidden' name='animal_name' value=$animal_name>
+              <input type='hidden' name='owner_VAT' value=$owner_VAT>
+              <input type='hidden' name='date_time' value=$consult_date>
+              <input type='hidden' name='procedure_num' value=$num>
               <p> <input type='submit' value='Insert Boold Test Results'> </p>
             </form>");
 
