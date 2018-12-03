@@ -43,8 +43,8 @@
                 {
 
                     $owner_VAT = $row['VAT'];
-    		        $owner = $row['owner'];
-    		        $animal = $row['name'];
+    		            $owner = $row['owner'];
+    		            $animal = $row['name'];
                     echo "<tr>";
                     echo "<td>" . $owner_VAT . "</td>";
                     echo "<td>" . $owner . "</td>";

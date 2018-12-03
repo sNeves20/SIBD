@@ -3,7 +3,6 @@
     <body>
 
       <?php
-
           $host = "db.ist.utl.pt";
           $user = "ist190841";
           $pass = "zzpq7270";
@@ -24,6 +23,7 @@
           $owner_VAT = $_REQUEST['owner_VAT'];
           $animal_name = $_REQUEST['animal_name'];
 
+          echo "<p> $animal_name </p>";
           //ARRANJAR FORMA DE ADICIONAR MAIS DO QUE UM DIAGNOSTICO, SEM POR DIRETAMENTE N INPUTS
 
           echo("<form action = 'insert_consult.php' method = 'post'>

@@ -40,10 +40,10 @@
             }
 
             echo("<form action='create_new_consult.php' method='post'>
-              <p> <input type='hidden' name='owner_VAT' value= " . $owner_VAT . "> </p>
-              <p> <input type='hidden' name='client_VAT' value= " . $owner_VAT . "> </p>
-              <p> <input type='hidden' name='animal_name' value=" . $animal_name . "> </p>
-              <p> <input type='submit' value='New Consult'> </p>
+              <p> <input type='hidden' name = 'owner_VAT' value= " . $owner_VAT . "> </p>
+              <p> <input type='hidden' name = 'client_VAT' value= " . $owner_VAT . "> </p>
+              <p> <input type='hidden' name = 'animal_name' value=" . $animal_name . "> </p>
+              <p> <input type='submit' value ='New Consult'> </p>
             </form>");
 
             $connection = null;
