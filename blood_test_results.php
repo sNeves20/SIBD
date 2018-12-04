@@ -20,9 +20,9 @@
             exit();
           }
 
-          $owner_VAT = $_REQUEST['owner_VAT'];
-          $animal_name = $_REQUEST['animal_name'];
-          $consult_date = $_REQUEST['consult_date'];
+          $owner_VAT = $_GET['owner_VAT'];
+          $animal_name = $_GET['animal_name'];
+          $consult_date = $_GET['consult_date'];
 
           echo("<form action = 'insert_blood_test_results.php' method = 'post'>
               <p> <input type='hidden' name='owner_VAT' value= " . $owner_VAT . "> </p>

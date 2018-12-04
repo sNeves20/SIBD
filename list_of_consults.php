@@ -34,14 +34,22 @@
                 exit();
             }
             //
-            echo ("<table border='1'>
+            echo ("<table border='1' cellspacing = '5'>
               <tr>
                 <td>Consult Date</td>
               </tr>");
             foreach ($result as $row) {
                 $consult_date = $row['date_timestamp'];
                 echo "<tr>";
-                echo "<td>" . '<a href="consult_information.php?consult_date='. $consult_date .'&animal_name='.$animal_name.'&owner_VAT='.$owner_VAT.'">'. $consult_date .'</a>'."</td>";
+                echo "<td>" .'<a href="consult_information.php?consult_date='. $consult_date .'&animal_name='.$animal_name.'&owner_VAT='.$owner_VAT.'">'. $consult_date .'</a>'."</td>";
+
+                echo("<td> <table border='0' cellspacing = '5'> <tr><td><a href=\"blood_test_results.php?consult_date=");
+                echo ($consult_date);
+                echo ("&animal_name=");
+                echo ($animal_name);
+                echo ("&owner_VAT=");
+                echo ($owner_VAT);
+                echo("\">Insert Blood Test Results</a></td></tr></table>\n");
                 echo "</tr>";
             }
             echo ("</table>");
