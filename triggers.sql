@@ -43,7 +43,7 @@ delimiter ;
 
 
 delimiter $$
-create trigger ins_vet before update on veterinary for each row
+create trigger ins_vet_up before update on veterinary for each row
 begin
 if exists (select * from assistant
 where new.VAT=assistant.VAT)
@@ -57,7 +57,7 @@ delimiter ;
 
 
 delimiter $$
-create trigger ins_ass before update on assistant for each row
+create trigger ins_ass_up before update on assistant for each row
 begin
 if exists (select * from veterinary
 where new.VAT=veterinary.VAT)
@@ -88,7 +88,7 @@ delimiter ;
 
 
 delimiter $$
-create trigger phone_nb before update on phone_number for each row
+create trigger phone_nb_up before update on phone_number for each row
 begin
 if exists (select * from phone_number
 where new.phone=phone_number.phone)

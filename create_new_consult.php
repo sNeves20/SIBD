@@ -37,7 +37,12 @@
               <p> O : <input type = 'text' name = 'O'/></p>
               <p> A : <input type = 'text' name = 'A'/></p>
               <p> P : <input type = 'text' name = 'P'/></p>
-              <p> Diagnostic codes : <input type = 'number' name = 'diagnostic_code'/></p>
+              <p>Diagnostic code(s):</p>
+              <input type='checkbox' name='code1' value='7211'> 7211 - Fleas<br>
+              <input type='checkbox' name='code2' value='7455'> 7455 - Kidney Failure<br>
+              <input type='checkbox' name='code3' value='7644'> 7644 - Diabetes<br>
+              <input type='checkbox' name='code4' value='7897'> 7897 - Broken Leg<br>
+              <input type='checkbox' name='code5' value='7899'> 7899 - Broken Rib<br>
               <p> <input type='submit' value='Submit'/></p>
           </form>");
           $connection = null;

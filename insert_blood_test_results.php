@@ -29,15 +29,11 @@
             $RBC = $_REQUEST['RBC'];
             $WBC = $_REQUEST['WBC'];
 
-            echo $owner_VAT;
-            echo $animal_name;
-            echo $consult_date;
-            echo $assistant_VAT;
 
             //Inserts information into table consult
-            $sql_1 = "INSERT INTO participation VALUES('$animal_name','$owner_VAT', '$consult_date', '$assistant_VAT')";
+            $sql = "INSERT INTO produced_indicator VALUES('$animal_name','$owner_VAT', '$consult_date', 2, 'Cholesterol', $Cholesterol)";
 
-            $result = $connection->query($sql_1);
+            $result = $connection->query($sql);
             if ($result == FALSE)
             {
                 $info = $connection->errorInfo();
