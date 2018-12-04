@@ -3,7 +3,6 @@
     <body>
 
       <?php
-
           $host = "db.ist.utl.pt";
           $user = "ist190841";
           $pass = "zzpq7270";
