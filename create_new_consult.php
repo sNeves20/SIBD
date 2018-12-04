@@ -23,20 +23,23 @@
           $owner_VAT = $_REQUEST['owner_VAT'];
           $animal_name = $_REQUEST['animal_name'];
 
-          echo "<p> $animal_name </p>";
-          //ARRANJAR FORMA DE ADICIONAR MAIS DO QUE UM DIAGNOSTICO, SEM POR DIRETAMENTE N INPUTS
-
           echo("<form action = 'insert_consult.php' method = 'post'>
               <p> Owner VAT : <input type = 'number' name = 'owner_VAT' value = $owner_VAT /></p>
               <p> Client VAT : <input type = 'number' name = 'client_VAT' value = $client_VAT /></p>
               <p> Animal Name : <input type = 'text' name = 'animal_name' value = $animal_name /></p>
-              <p> Veterinary VAT : <input type = 'number' name = 'vet_VAT'/></p>
-              <p> Animal's weight : <input type = 'number' name = 'weight'/></p>
+              <p> Veterinary :
+              <select name='vet_VAT'>
+                <option value='222679022'>Dr. John Smith: 222679022</option>
+                <option value='663911102'>Dr. Hannah McDonald - 663911102</option>
+                <option value='219012033'>Dr. David Hamilton - 219012033</option>
+                <option value='184777249'>Dr. Kate West - 184777249</option>
+              </select> </p>
+              <p> Animal's weight (Kg) : <input type = 'number' name = 'weight'/></p>
               <h4> SOAPs </h4>
-              <p> S : <input type = 'text' name = 'S'/></p>
-              <p> O : <input type = 'text' name = 'O'/></p>
-              <p> A : <input type = 'text' name = 'A'/></p>
-              <p> P : <input type = 'text' name = 'P'/></p>
+              <p> Subjective : <input type = 'text' name = 'S'/></p>
+              <p> Objective : <input type = 'text' name = 'O'/></p>
+              <p> Assessment : <input type = 'text' name = 'A'/></p>
+              <p> Plan : <input type = 'text' name = 'P'/></p>
               <p>Diagnostic code(s):</p>
               <input type='checkbox' name='code1' value='7211'> 7211 - Fleas<br>
               <input type='checkbox' name='code2' value='7455'> 7455 - Kidney Failure<br>
