@@ -29,7 +29,7 @@
               <p> Animal Name : <input type = 'text' name = 'animal_name' value = $animal_name /></p>
               <p> Veterinary :
               <select name='vet_VAT'>
-                <option value='222679022'>Dr. John Smith: 222679022</option>
+                <option value='222679022'>Dr. John Smith - 222679022</option>
                 <option value='663911102'>Dr. Hannah McDonald - 663911102</option>
                 <option value='219012033'>Dr. David Hamilton - 219012033</option>
                 <option value='184777249'>Dr. Kate West - 184777249</option>
