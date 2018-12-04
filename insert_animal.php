@@ -21,7 +21,7 @@
 
             //Requesting access to variables obtained in the form
 
-            $owner_VAT = $_REQUEST['client_VAT'];
+            $owner_VAT = $_REQUEST['owner_VAT'];
             $animal_name = $_REQUEST['animal_name'];
             $species_name = $_REQUEST['species_name'];
             $colour = $_REQUEST['colour'];
@@ -29,7 +29,7 @@
             $birth_year = $_REQUEST['birth_year'];
 
             //Issuing MySQL command
-            $sql = "INSERT INTO animal(name, VAT, species_name, colour, gender, birth_year) VALUES('$animal_name', '184530918', '$species_name', '$colour' , '$gender', '$birth_year')";
+            $sql = "INSERT INTO animal(name, VAT, species_name, colour, gender, birth_year) VALUES('$animal_name', '$owner_VAT', '$species_name', '$colour' , '$gender', '$birth_year')";
 
             $result = $connection->query($sql);
             if ($result == FALSE)
