@@ -35,10 +35,14 @@
 
 
 
-            //Inserts into procedure_
-            $sql = "INSERT INTO procedure_ VALUES('$animal_name', '$owner_VAT', '2018-12-04 12:55:25', '$procedure_num', '$description')";
 
-            $result = $connection->query($sql);
+            //Begin Transaction
+            $connection->beginTransaction();
+
+            //Inserts into procedure_
+            $sql = "INSERT INTO procedure_ VALUES('$animal_name', '$owner_VAT', '2018-12-04 15:09:26', '$procedure_num', '$description')";
+
+            $result = $connection->exec($sql);
             if ($result == FALSE)
             {
                 $info = $connection->errorInfo();
@@ -47,9 +51,9 @@
             }
 
             //Inserts into performed
-            $sql2 = "INSERT INTO performed VALUES('$animal_name', '$owner_VAT', '2018-12-04 12:55:25', '$procedure_num', '$assistant_VAT')";
+            $sql2 = "INSERT INTO performed VALUES('$animal_name', '$owner_VAT', '2018-12-04 15:09:26', '$procedure_num', '$assistant_VAT')";
 
-            $result = $connection->query($sql2);
+            $result = $connection->exec($sql2);
             if ($result == FALSE)
             {
                 $info = $connection->errorInfo();
@@ -58,9 +62,9 @@
             }
 
             //Inserts into test_procedure
-            $sql3 = "INSERT INTO test_procedure VALUES('$animal_name', '$owner_VAT', '2018-12-04 12:55:25', '$procedure_num', '$type')";
+            $sql3 = "INSERT INTO test_procedure VALUES('$animal_name', '$owner_VAT', '2018-12-04 15:09:26', '$procedure_num', '$type')";
 
-            $result = $connection->query($sql3);
+            $result = $connection->exec($sql3);
             if ($result == FALSE)
             {
                 $info = $connection->errorInfo();
@@ -72,9 +76,9 @@
             if(!empty($Cholesterol)){
               $indicator_name = 'Cholesterol';
 
-              $sql_code4 = "INSERT INTO produced_indicator VALUES('$animal_name', '$owner_VAT', '2018-12-04 12:55:25', '$procedure_num', '$indicator_name', '$Cholesterol')";
+              $sql_code4 = "INSERT INTO produced_indicator VALUES('$animal_name', '$owner_VAT', '2018-12-04 15:09:26', '$procedure_num', '$indicator_name', '$Cholesterol')";
 
-              $result = $connection->query($sql_code4);
+              $result = $connection->exec($sql_code4);
               if ($result == FALSE)
               {
                   $info = $connection->errorInfo();
@@ -86,9 +90,9 @@
             if(!empty($Creatinine)){
               $indicator_name = 'Creatinine Level';
 
-              $sql_code5 = "INSERT INTO produced_indicator VALUES('$animal_name', '$owner_VAT', '2018-12-04 12:55:25', '$procedure_num', '$indicator_name', '$Creatinine')";
+              $sql_code5 = "INSERT INTO produced_indicator VALUES('$animal_name', '$owner_VAT', '2018-12-04 15:09:26', '$procedure_num', '$indicator_name', '$Creatinine')";
 
-              $result = $connection->query($sql_code5);
+              $result = $connection->exec($sql_code5);
               if ($result == FALSE)
               {
                   $info = $connection->errorInfo();
@@ -100,9 +104,9 @@
             if(!empty($RBC)){
               $indicator_name = 'Red Blood Cells';
 
-              $sql_code6 = "INSERT INTO produced_indicator VALUES('$animal_name', '$owner_VAT', '2018-12-04 12:55:25', '$procedure_num', '$indicator_name', '$RBC')";
+              $sql_code6 = "INSERT INTO produced_indicator VALUES('$animal_name', '$owner_VAT', '2018-12-04 15:09:26', '$procedure_num', '$indicator_name', '$RBC')";
 
-              $result = $connection->query($sql_code6);
+              $result = $connection->exec($sql_code6);
               if ($result == FALSE)
               {
                   $info = $connection->errorInfo();
@@ -114,9 +118,9 @@
             if(!empty($WBC)){
               $indicator_name = 'White Blood Cells';
 
-              $sql_code7 = "INSERT INTO produced_indicator VALUES('$animal_name', '$owner_VAT', '2018-12-04 12:55:25', '$procedure_num', '$indicator_name', '$WBC')";
+              $sql_code7 = "INSERT INTO produced_indicator VALUES('$animal_name', '$owner_VAT', '2018-12-04 15:09:26', '$procedure_num', '$indicator_name', '$WBC')";
 
-              $result = $connection->query($sql_code7);
+              $result = $connection->exec($sql_code7);
               if ($result == FALSE)
               {
                   $info = $connection->errorInfo();
@@ -125,11 +129,13 @@
               }
             }
 
+            $connection->commit();
+            echo("<p>Blood test procedure information inserted successfully in the consult!</p>");
 
-            //list_of_consults.php
-            echo("<form action='list_of_consults.php' method='post'>
-              <p> <input type='submit' value='Submit'> </p>
+            echo("<form action='Searchforclient.php' method='post'>
+              <p> <input type='submit' value='Seach for new client'> </p>
             </form>");
+
 
             $connection = null;
         ?>
