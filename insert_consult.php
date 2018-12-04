@@ -114,6 +114,7 @@
               }
             }
 
+            echo("<p>New consult created successfully!</p>");
 
             echo("<form action='list_of_consults.php' method='GET'>
               <p> <input type='hidden' name='owner_VAT' value= " . $owner_VAT . "> </p>

@@ -39,6 +39,8 @@
                 exit();
             }
 
+            echo("<p>New animal registered successfully!</p>");
+
             echo("<form action='create_new_consult.php' method='post'>
               <p> <input type='hidden' name = 'owner_VAT' value= " . $owner_VAT . "> </p>
               <p> <input type='hidden' name = 'client_VAT' value= " . $owner_VAT . "> </p>
