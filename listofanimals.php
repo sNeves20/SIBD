@@ -24,7 +24,7 @@
               $owner_name = $_REQUEST['owner_name'];
 
               //Issuing MySQL command
-              $sql = "SELECT animal.VAT, person.name as owner, animal.name FROM person NATURAL JOIN client INNER JOIN animal WHERE animal.name='$animal_name' AND person.name like '%$owner_name%'";
+              $sql = "SELECT animal.VAT, person.name as owner, animal.name FROM person NATURAL JOIN client INNER JOIN animal ON animal.VAT = person.VAT WHERE animal.name='$animal_name' AND person.name like '%$owner_name%'";
               $result = $connection->query($sql);
               if ($result == FALSE)
               {
