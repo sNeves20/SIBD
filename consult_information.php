@@ -138,7 +138,7 @@
               <td> Dosage </td>
               <td> Regime </td>
             </tr>");
-            
+
             foreach ($result as $row) {
                 $diagnosis = $row['diagnosis_name'];
                 $diagnosis_code = $row['code'];

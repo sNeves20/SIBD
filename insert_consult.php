@@ -119,8 +119,7 @@
               <p> <input type='hidden' name='owner_VAT' value= " . $owner_VAT . "> </p>
               <p> <input type='hidden' name='client_VAT' value= " . $owner_VAT . "> </p>
               <p> <input type='hidden' name='animal_name' value=" . $animal_name . "> </p>
-              <p> <input type='hidden' name='date_time' value=" . $date_time . "> </p>
-              <p> <input type='submit' value='New Consult'> </p>
+              <p> <input type='submit' value='List of consults'> </p>
             </form>");
 
             $connection = null;
