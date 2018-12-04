@@ -115,7 +115,7 @@
             }
 
 
-            echo("<form action='list_of_consults.php' method='post'>
+            echo("<form action='list_of_consults.php' method='GET'>
               <p> <input type='hidden' name='owner_VAT' value= " . $owner_VAT . "> </p>
               <p> <input type='hidden' name='client_VAT' value= " . $owner_VAT . "> </p>
               <p> <input type='hidden' name='animal_name' value=" . $animal_name . "> </p>
