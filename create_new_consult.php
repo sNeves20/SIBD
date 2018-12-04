@@ -3,7 +3,6 @@
     <body>
 
       <?php
-
           $host = "db.ist.utl.pt";
           $user = "ist190841";
           $pass = "zzpq7270";
@@ -24,6 +23,7 @@
           $owner_VAT = $_REQUEST['owner_VAT'];
           $animal_name = $_REQUEST['animal_name'];
 
+          echo "<p> $animal_name </p>";
           //ARRANJAR FORMA DE ADICIONAR MAIS DO QUE UM DIAGNOSTICO, SEM POR DIRETAMENTE N INPUTS
 
           echo("<form action = 'insert_consult.php' method = 'post'>
@@ -37,7 +37,12 @@
               <p> O : <input type = 'text' name = 'O'/></p>
               <p> A : <input type = 'text' name = 'A'/></p>
               <p> P : <input type = 'text' name = 'P'/></p>
-              <p> Diagnostic codes : <input type = 'number' name = 'diagnostic_code'/></p>
+              <p>Diagnostic code(s):</p>
+              <input type='checkbox' name='code1' value='7211'> 7211 - Fleas<br>
+              <input type='checkbox' name='code2' value='7455'> 7455 - Kidney Failure<br>
+              <input type='checkbox' name='code3' value='7644'> 7644 - Diabetes<br>
+              <input type='checkbox' name='code4' value='7897'> 7897 - Broken Leg<br>
+              <input type='checkbox' name='code5' value='7899'> 7899 - Broken Rib<br>
               <p> <input type='submit' value='Submit'/></p>
           </form>");
           $connection = null;

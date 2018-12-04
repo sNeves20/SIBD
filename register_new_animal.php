@@ -28,7 +28,11 @@
               <p> Animal Name : <input type = 'text' name = 'animal_name' value = $animal_name /></p>
               <p> Species : <input type = 'text' name = 'species_name'/></p>
               <p> Colour : <input type = 'text' name = 'colour'/></p>
-              <p> Gender : <input type = 'text' name = 'gender'/></p>
+              <p> Gender :
+              <select name='gender'>
+                <option value='F'>F</option>
+                <option value='M'>M</option>
+              </select> </p>
               <p> Birth Year : <input type = 'number' name = 'birth_year'/></p>
               <p> <input type='submit' value='Submit'/></p>
           </form>");

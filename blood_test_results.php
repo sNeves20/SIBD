@@ -24,8 +24,6 @@
           $animal_name = $_REQUEST['animal_name'];
           $consult_date = $_REQUEST['consult_date'];
 
-          //ARRANJAR FORMA DE ADICIONAR MAIS DO QUE UM DIAGNOSTICO, SEM POR DIRETAMENTE N INPUTS
-
           echo("<form action = 'insert_blood_test_results.php' method = 'post'>
               <p> <input type='hidden' name='owner_VAT' value= " . $owner_VAT . "> </p>
               <p> <input type='hidden' name='animal_name' value=" . $animal_name . "> </p>
