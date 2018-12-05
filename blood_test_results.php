@@ -23,8 +23,8 @@
           $owner_VAT = $_GET['owner_VAT'];
           $animal_name = $_GET['animal_name'];
           $consult_date = $_GET['consult_date'];
+          $consult_date = str_replace(" ","*", $consult_date);
 
-          echo $consult_date;
 
           echo("<form action = 'insert_blood_test_results.php' method = 'get'>
               <p> <input type='hidden' name='owner_VAT' value= " . $owner_VAT . "> </p>
