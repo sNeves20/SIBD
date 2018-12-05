@@ -244,7 +244,7 @@
               echo "</table>";
         }
           $connection = null;
-          echo("<form action='blood_test_results.php' method='GET'>
+          echo("<form action='blood_test_results.php' method='get'>
           <p> <input type='hidden' name='owner_VAT' value= " . $owner_VAT . "> </p>
           <p> <input type='hidden' name='animal_name' value=" . $animal_name . "> </p>
           <p> <input type='hidden' name='consult_date' value=" . $consult_date . "> </p>

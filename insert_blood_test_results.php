@@ -19,16 +19,16 @@
               exit();
             }
 
-            $owner_VAT = $_REQUEST['owner_VAT'];
-            $animal_name = $_REQUEST['animal_name'];
-            $consult_date = $_REQUEST['consult_date'];
+            $owner_VAT = $_GET['owner_VAT'];
+            $animal_name = $_GET['animal_name'];
+            $consult_date = $_GET['consult_date'];
 
-            $assistant_VAT = $_REQUEST['assistant_VAT'];
-            $description = $_REQUEST['description'];
-            $Cholesterol = $_REQUEST['Cholesterol'];
-            $Creatinine = $_REQUEST['Creatinine'];
-            $RBC = $_REQUEST['RBC'];
-            $WBC = $_REQUEST['WBC'];
+            $assistant_VAT = $_GET['assistant_VAT'];
+            $description = $_GET['description'];
+            $Cholesterol = $_GET['Cholesterol'];
+            $Creatinine = $_GET['Creatinine'];
+            $RBC = $_GET['RBC'];
+            $WBC = $_GET['WBC'];
 
             $procedure_num = 2; //Number associated to blood test procedure
             $type = 'B'; //Type associated to blood test procedure --> B=blood_test
