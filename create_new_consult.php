@@ -1,3 +1,6 @@
+<?php
+    session_start();
+ ?>
 <html>
     <h3>Create new consult</h3>
     <body>
@@ -19,9 +22,9 @@
             exit();
           }
 
-          $client_VAT = $_REQUEST['client_VAT'];
-          $owner_VAT = $_REQUEST['owner_VAT'];
-          $animal_name = $_REQUEST['animal_name'];
+          $client_VAT = $_SESSION['client_VAT'];
+          $owner_VAT = $_SESSION['owner_VAT'];
+          $animal_name = $_SESSION['animal_name'];
 
           echo("<form action = 'insert_consult.php' method = 'post'>
               <p> Owner VAT : <input type = 'number' name = 'owner_VAT' value = $owner_VAT /></p>

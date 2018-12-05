@@ -1,8 +1,12 @@
 <!DOCTYPE html>
+<?php
+    session_start();
+ ?>
 <html lang="en" dir="ltr">
       <h3>List of Animals</h3>
       <body>
           <?php
+
               $host = "db.ist.utl.pt";
               $user = "ist190841";
               $pass = "zzpq7270";
@@ -19,9 +23,13 @@
                 exit();
               }
               //Requesting access to variables from previous page
-              $client_VAT = $_REQUEST['client_VAT'];
-              $animal_name = $_REQUEST['animal_name'];
-              $owner_name = $_REQUEST['owner_name'];
+              $_SESSION['client_VAT'] = $_REQUEST['client_VAT'];
+              $_SESSION['animal_name'] = $_REQUEST['animal_name'];
+              $_SESSION['owner_name'] = $_REQUEST['owner_name'];
+
+              $animal_name = $_SESSION['animal_name'];
+              $client_VAT = $_SESSION['client_VAT'];
+              $owner_name = $_SESSION['owner_name'];
 
               //Issuing MySQL command
               $sql = "SELECT animal.VAT, person.name as owner, animal.name FROM person NATURAL JOIN client INNER JOIN animal ON animal.VAT = person.VAT WHERE animal.name='$animal_name' AND person.name like '%$owner_name%'";
@@ -43,19 +51,18 @@
                 {
 
                     $owner_VAT = $row['VAT'];
-    		            $owner = $row['owner'];
-    		            $animal = $row['name'];
+    		        $owner = $row['owner'];
+    		        $animal = $row['name'];
+
                     echo "<tr>";
                     echo "<td>" . $owner_VAT . "</td>";
                     echo "<td>" . $owner . "</td>";
-                    echo "<td>" . '<a href="list_of_consults.php?owner_VAT='. $owner_VAT .'&animal_name='.$animal_name. '&client_VAT='.$client_VAT. '">'. $animal .'</a>'."</td>";
+                    echo "<td>" . '<a href="list_of_consults.php?owner_VAT='. $owner_VAT .'">'. $animal .'</a>'."</td>";
                     echo "</tr>";
                 }
               echo ("</table>");
               $connection = null;
               echo("<form action='register_new_animal.php' method='post'>
-                <p> <input type='hidden' name='client_VAT' value= " . $client_VAT . "> </p>
-                <p> <input type='hidden' name='animal_name' value=" . $animal_name . "> </p>
                 <p> <input type='submit' value='Register New Animal'> </p>
               </form>");
           ?>

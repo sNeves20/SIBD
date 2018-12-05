@@ -1,3 +1,6 @@
+<?php
+    session_start();
+ ?>
 <html>
     <h3>Register New Animal</h3>
     <body>
@@ -20,8 +23,8 @@
             exit();
           }
 
-          $owner_VAT = $_REQUEST['client_VAT'];
-          $animal_name = $_REQUEST['animal_name'];
+          $owner_VAT = $_SESSION['client_VAT'];
+          $animal_name = $_SESSION['animal_name'];
 
           echo("<form action = 'insert_animal.php' method = 'post'>
               <p> Owner VAT : <input type = 'number' name = 'owner_VAT' value = $owner_VAT /></p>

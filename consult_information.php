@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+    session_start();
+ ?>
 <html lang="en" dir="ltr">
     <h3>Consult Information</h3>
     <body>
@@ -20,9 +23,12 @@
               exit();
             }
 
-            $animal_name = $_GET['animal_name'];
-            $consult_date = $_GET['consult_date'];
-            $owner_VAT = $_GET['owner_VAT'];
+            //Getting Session Values
+            $animal_name = $_SESSION['animal_name'];
+            $owner_VAT = $_SESSION['owner_VAT'];
+            //Setting session values
+            $_SESSION['consult_date'] = $_GET['consult_date'];
+            $consult_date = $_SESSION['consult_date'];
 
             //Issuing MySQL command
             $sql = "SELECT * FROM consult WHERE consult.name = '$animal_name' AND consult.date_timestamp = CAST('$consult_date' AS datetime) AND consult.VAT_owner =".intval($owner_VAT).";";
@@ -244,6 +250,8 @@
               echo "</table>";
         }
           $connection = null;
+
+          session_destroy();
           echo("<form action='Searchforclient.php' method='GET'>
               <p> <input type='submit' value='Search for new client'> </p>
           </form>");

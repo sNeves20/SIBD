@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+    session_start();
+ ?>
 <html lang="en" dir="ltr">
     <body>
         <?php
@@ -22,7 +25,11 @@
             //Requesting access to variables obtained in the form
 
             $owner_VAT = $_REQUEST['owner_VAT'];
+            $_SESSION['client_VAT'] = $owner_VAT;
+            $_SESSION['owner_VAT'] = $owner_VAT;
             $animal_name = $_REQUEST['animal_name'];
+            $_SESSION['animal_name'] = $animal_name;
+
             $species_name = $_REQUEST['species_name'];
             $colour = $_REQUEST['colour'];
             $gender = $_REQUEST['gender'];
@@ -40,11 +47,8 @@
             }
 
             echo("<p>New animal registered successfully!</p>");
-            
+
             echo("<form action='create_new_consult.php' method='post'>
-              <p> <input type='hidden' name = 'owner_VAT' value= " . $owner_VAT . "> </p>
-              <p> <input type='hidden' name = 'client_VAT' value= " . $owner_VAT . "> </p>
-              <p> <input type='hidden' name = 'animal_name' value=" . $animal_name . "> </p>
               <p> <input type='submit' value ='New Consult'> </p>
             </form>");
 

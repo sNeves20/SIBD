@@ -1,3 +1,6 @@
+<?php
+    session_start();
+ ?>
 <html>
     <h3>Blood Test Results</h3>
     <body>
@@ -20,15 +23,13 @@
             exit();
           }
 
-          $owner_VAT = $_GET['owner_VAT'];
-          $animal_name = $_GET['animal_name'];
+          $owner_VAT = $_SESSION['owner_VAT'];
+          $animal_name = $_SESSION['animal_name'];
           $consult_date = $_GET['consult_date'];
           $consult_date = str_replace(" ","*", $consult_date);
 
 
           echo("<form action = 'insert_blood_test_results.php' method = 'get'>
-              <p> <input type='hidden' name='owner_VAT' value= " . $owner_VAT . "> </p>
-              <p> <input type='hidden' name='animal_name' value=" . $animal_name . "> </p>
               <p> <input type='hidden' name='consult_date' value=" . $consult_date . "> </p>
               <p> Assistant :
               <select name='assistant_VAT'>

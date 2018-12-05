@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+    session_start();
+ ?>
 <html lang="en" dir="ltr">
     <body>
         <?php
@@ -20,8 +23,12 @@
             }
 
             $owner_VAT = $_REQUEST['owner_VAT'];
+            $_SESSION['owner_VAT'] = $owner_VAT;
             $client_VAT = $_REQUEST['client_VAT'];
+            $_SESSION['client_VAT'] = $client_VAT;
             $animal_name = $_REQUEST['animal_name'];
+            $_SESSION['animal_name'] = $animal_name;
+
             $vet_VAT = $_REQUEST['vet_VAT'];
             $weight = $_REQUEST['weight'];
             $S = $_REQUEST['S'];
@@ -115,11 +122,9 @@
             }
 
             echo("<p>New consult created successfully!</p>");
-            
+
             echo("<form action='list_of_consults.php' method='GET'>
               <p> <input type='hidden' name='owner_VAT' value= " . $owner_VAT . "> </p>
-              <p> <input type='hidden' name='client_VAT' value= " . $owner_VAT . "> </p>
-              <p> <input type='hidden' name='animal_name' value=" . $animal_name . "> </p>
               <p> <input type='submit' value='List of consults'> </p>
             </form>");
 

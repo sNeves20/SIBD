@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+    session_start();
+ ?>
 <html lang="en" dir="ltr">
     <body>
         <?php
@@ -19,10 +22,10 @@
               exit();
             }
 
-            $owner_VAT = $_REQUEST['owner_VAT'];
-            $animal_name = $_REQUEST['animal_name'];
+            echo ($owner_VAT = $_SESSION['owner_VAT']);
+            echo ($animal_name = $_SESSION['animal_name']);
             $consult_date = $_REQUEST['consult_date'];
-            $consult_date = str_replace("*"," ", $consult_date);
+            echo ($consult_date = str_replace("*"," ", $consult_date));
 
             $assistant_VAT = $_REQUEST['assistant_VAT'];
             $description = $_REQUEST['description'];
