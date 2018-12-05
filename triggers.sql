@@ -1,4 +1,4 @@
-//TRIGGER 1
+--TRIGGER 1
 
 delimiter $$
 create trigger update_age before insert on consult for each row
@@ -11,8 +11,8 @@ end$$
 delimiter ;
 
 
-//---------------------------------------------------------------------------------------
-//TRIGGER 2
+---------------------------------------------------------------------------------------
+--TRIGGER 2
 
 delimiter $$
 create trigger ins_vet before insert on veterinary for each row
@@ -69,8 +69,8 @@ end$$
 delimiter ;
 
 
-//---------------------------------------------------------------------------------------
-//TRIGGER 3
+---------------------------------------------------------------------------------------
+--TRIGGER 3
 
 delimiter $$
 create trigger phone_nb before insert on phone_number for each row
