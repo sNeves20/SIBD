@@ -1,3 +1,6 @@
+<?php
+    session_start();
+ ?>
 <html>
     <body>
         <form action = "listofanimals.php" method = "post">
