@@ -22,10 +22,10 @@
               exit();
             }
 
-            echo ($owner_VAT = $_SESSION['owner_VAT']);
-            echo ($animal_name = $_SESSION['animal_name']);
+            $owner_VAT = $_SESSION['owner_VAT'];
+            $animal_name = $_SESSION['animal_name'];
             $consult_date = $_REQUEST['consult_date'];
-            echo ($consult_date = str_replace("*"," ", $consult_date));
+            $consult_date = str_replace("*"," ", $consult_date);
 
             $assistant_VAT = $_REQUEST['assistant_VAT'];
             $description = $_REQUEST['description'];

@@ -28,16 +28,26 @@
           $consult_date = $_GET['consult_date'];
           $consult_date = str_replace(" ","*", $consult_date);
 
+          $sql = " SELECT assistant.VAT, person.name FROM person NATURAL JOIN assistant";
+          $result = $connection->query($sql);
+          if ($result == FALSE)
+          {
+              $info = $connection->errorInfo();
+              echo("<p>Error: {$info[2]}</p>");
+              exit();
+          }
 
           echo("<form action = 'insert_blood_test_results.php' method = 'get'>
               <p> <input type='hidden' name='consult_date' value=" . $consult_date . "> </p>
               <p> Assistant :
-              <select name='assistant_VAT'>
-                <option value='243379726'>Callum Marshall - 243379726</option>
-                <option value='307700243'>Evan Francis - 307700243</option>
-                <option value='693543473'>Petra Louis - 693543473</option>
-                <option value='695743999'>Ruslaud Yoi - 695743999</option>
-              </select> </p>
+              <select name='assistant_VAT'>");
+
+              foreach ($result as $row) {
+                  $assistant_VAT = $row['VAT'];
+                  $assistant_name = $row['name'];
+                  echo ("<option value=\"$assistant_VAT\">$assistant_name - $assistant_VAT</option>");
+              }
+              echo ("</select> </p>
               <p> Procedure description: <input type = 'text' name = 'description'/></p>
               <h4> Indicators (obtained values) </h4>
               <p> Cholesterol (mg): <input type = 'number' name = 'Cholesterol'/></p>

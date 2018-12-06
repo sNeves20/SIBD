@@ -26,17 +26,30 @@
           $owner_VAT = $_SESSION['owner_VAT'];
           $animal_name = $_SESSION['animal_name'];
 
+         ;
+
+          $sql = " SELECT veterinary.VAT, person.name FROM person NATURAL JOIN veterinary";
+          $result = $connection->query($sql);
+          if ($result == FALSE)
+          {
+              $info = $connection->errorInfo();
+              echo("<p>Error: {$info[2]}</p>");
+              exit();
+          }
+
           echo("<form action = 'insert_consult.php' method = 'post'>
               <p> Owner VAT : <input type = 'number' name = 'owner_VAT' value = $owner_VAT /></p>
               <p> Client VAT : <input type = 'number' name = 'client_VAT' value = $client_VAT /></p>
               <p> Animal Name : <input type = 'text' name = 'animal_name' value = $animal_name /></p>
               <p> Veterinary :
-              <select name='vet_VAT'>
-                <option value='222679022'>Dr. John Smith - 222679022</option>
-                <option value='663911102'>Dr. Hannah McDonald - 663911102</option>
-                <option value='219012033'>Dr. David Hamilton - 219012033</option>
-                <option value='184777249'>Dr. Kate West - 184777249</option>
-              </select> </p>
+              <select name='vet_VAT'>");
+
+              foreach ($result as $row) {
+                  $vet_VAT = $row['VAT'];
+                  $vet_name = $row['name'];
+                  echo ("<option value=\"$vet_VAT\">$vet_name - $vet_VAT</option>");
+              }
+              echo ("</select> </p>
               <p> Animal's weight (Kg) : <input type = 'number' name = 'weight'/></p>
               <h4> SOAPs </h4>
               <p> Subjective : <input type = 'text' name = 'S'/></p>

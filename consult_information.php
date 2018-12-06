@@ -61,8 +61,8 @@
 
               echo "<tr>";
               echo "<td>" . $animal_name . "</td>";
-              echo "<td>" . $consult_date . "</td>";
               echo "<td>" . $owner_VAT . "</td>";
+              echo "<td>" . $consult_date . "</td>";
               echo "<td>" . $cli_VAT . "</td>";
               echo "<td>" . $vet_VAT . "</td>";
             }

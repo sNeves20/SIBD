@@ -26,21 +26,27 @@
           $owner_VAT = $_SESSION['client_VAT'];
           $animal_name = $_SESSION['animal_name'];
 
+          $sql = "SELECT name2, name1 FROM generalization_species LEFT JOIN species ON generalization_species.name2 = species.name";
+          $result = $connection->query($sql);
+          if ($result == FALSE)
+          {
+              $info = $connection->errorInfo();
+              echo("<p>Error: {$info[2]}</p>");
+              exit();
+          }
+
           echo("<form action = 'insert_animal.php' method = 'post'>
               <p> Owner VAT : <input type = 'number' name = 'owner_VAT' value = $owner_VAT /></p>
               <p> Animal Name : <input type = 'text' name = 'animal_name' value = $animal_name /></p>
               <p> Species :
-              <select name='species_name'>
-                <option value='Chicken'>Bird - Chicken</option>
-                <option value='Parakeet'>Bird - Parakeet</option>
-                <option value='Parrot'>Bird - Parrot</option>
-                <option value='Persian'>Cat - Persian</option>
-                <option value='Siamese'>Cat - Siamese</option>
-                <option value='German Shepard'>Dog - German Shepard</option>
-                <option value='Labrador'>Dog - Labrador</option>
-                <option value='Pug'>Dog - Pug</option>
-                <option value='Rotweiller'>Dog - Rotweiller</option>
-              </select> </p>
+
+              <select name='species_name'>");
+                foreach ($result as $row) {
+                    $species = $row['name2'];
+                    $sub_species = $row['name1'];
+                    echo ("<option value='$sub_species'>$species - $sub_species</option>");
+                }
+              echo("</select> </p>
               <p> Colour : <input type = 'text' name = 'colour'/></p>
               <p> Gender :
               <select name='gender'>
