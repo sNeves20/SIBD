@@ -12,6 +12,7 @@ insert into person values (236743073, "Lucas Hamman",	"Francis Leopold", "Texas"
 insert into person values (257457374,	"Rafael Nadal",	"Roses Green",	"Los Angels",	75000);
 insert into person values (245793574,	"Penelope Garcia",	"Roses Blue",	"Riverdale",	69100);
 insert into person values (745794188,	"Carmen Mendez",	"Street River",	"New York",	74957);
+insert into person values (111233528,	"Angelina Johnson",	"Street 5",	"Riverdale",	77755); /*inserted for testing*/
 
 insert into phone_number values (222679022, 2025550130);
 insert into phone_number values (222679022, 2025550156);
@@ -29,6 +30,7 @@ insert into phone_number values(236743073, 2057990000);
 insert into phone_number values(257457374, 2669990000);
 insert into phone_number values (245793574, 3334445566);
 insert into phone_number values(745794188, 4447497788);
+insert into phone_number values(111233528, 222666999); /*inserted for testing*/
 
 /*START Insertion into client*/
 insert into client values(184530918);
@@ -41,10 +43,11 @@ insert into client values(222679022);/*veterinary*/
 /*END client insertion*/
 
 /*START VET_Assistant insertion*/
-insert into assistant values(663911102);
+insert into assistant values(243379726);
 insert into assistant values(307700243);
 insert into assistant values(693543473);
-insert into assistant values(184777249);
+insert into assistant values(695743999);
+insert into assistant values(111233528); /*inserted for testing*/
 /*END VET_Assistant insertion*/
 
 /*START veterinary Insertion*/
@@ -52,6 +55,7 @@ insert into veterinary values(222679022,"Toxicology", "Prepared to work with  an
 insert into veterinary values(663911102,"Clinical Patology",	"30 years of experience");
 insert into veterinary values(219012033,"Hematology Intern", "Loves animals");
 insert into veterinary values(184777249,"Veterinary Patology", "12 years of experience");
+insert into veterinary values(111233528,"Veterinary", "1 year of experience"); /*inserted for testing*/
 /*END*/
 
 /*START species insertion*/
@@ -81,15 +85,15 @@ insert into generalization_species values("Parrot", "Bird");
 insert into generalization_species values("Parakeet", "Bird");
 insert into generalization_species values("Chicken", "Bird");
 /*Client Animals*/
-insert into animal values("Lacy",222679022,"German Shepard", "Black",'F', 2010,null);
-insert into animal values("Cookie",184530918,"Pug",	"Brown",	'F',	2009 ,null);
-insert into animal values("Rex",236743073,"Labrador", "Beige", 'M', 2011,null);
-insert into animal values("Max",257457374,"Pug",	"Black",	'M',	2012,null);
-insert into animal values("Tweety",184530918,"Siamese",	"White",	'M',	2015,null);
-insert into animal values("Lucy",243379726,"Chicken",	'Beige',	'F',	2011,null);
-insert into animal values("Soja",184530918,"Parrot",	"Orange",	'M',	2017,null);
-insert into animal values("Nina",243379726,"Parakeet", "Green", 'F',	2015,null);
-insert into animal values("Minnie",257457374,"Chicken",	"Brown",	'F',	2014,null);
+insert into animal values("Lacy",222679022,"German Shepard", "Black",'F', 2010, NULL);
+insert into animal values("Cookie",184530918,"Pug",	"Brown",	'F',	2009 , NULL);
+insert into animal values("Rex",236743073,"Labrador", "Beige", 'M', 2011, NULL);
+insert into animal values("Max",257457374,"Pug",	"Black",	'M',	2012, NULL);
+insert into animal values("Tweety",184530918,"Siamese",	"White",	'M',	2015, NULL);
+insert into animal values("Lucy",243379726,"Chicken",	'Beige',	'F',	2011, NULL);
+insert into animal values("Soja",184530918,"Parrot",	"Orange",	'M',	2017, NULL);
+insert into animal values("Nina",243379726,"Parakeet", "Green", 'F',	2015, NULL);
+insert into animal values("Minnie",257457374,"Chicken",	"Brown",	'F',	2014, NULL);
 /*END*/
 
 /*CENAS DA BIA*/
@@ -115,7 +119,6 @@ insert into consult values("Lucy",243379726, "2018-02-08 11:00:00", "Sleepy", "N
 insert into consult values("Soja",184530918, "2018-03-21 12:00:00", "Broken rib", "Normal weight", "Diagnostic 3", "Radiography", 245793574, 219012033, 1.2);
 insert into consult values("Nina",243379726, "2018-07-04 14:30:00", "Vomit", "Normal weight", "Diagnostic 1", "Gastric Lavage", 243379726, 184777249, 0.8);
 insert into consult values("Minnie",257457374, "2018-06-25 15:00:00", "Rash", "Normal weight", "Diagnostic 2", "Blood Analysis", 745794188, 222679022, 1.5);
-
 
 /*END consult insertion*/
 
